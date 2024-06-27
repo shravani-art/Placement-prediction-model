@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Predictor</title>
+</head>
+<body>
+    <h1>Upload CSV file with candidate data</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <br><br>
+        <button type="submit">Upload</button>
+    </form>
+    <!-- Display prediction text if available -->
+    {% if prediction_text_lr %}
+    <h2>Prediction Result from LR</h2>
+    <p>{{ prediction_text_lr }}</p>
+    {% endif %}
+    <!-- Display prediction text if available -->
+    {% if prediction_text_rfc %}
+    <h2>Prediction Result from RFC</h2>
+    <p>{{ prediction_text_rfc }}</p>
+    {% endif %}
+</body>
+</html>
